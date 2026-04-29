@@ -5,8 +5,96 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PR7p2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Матричный шифр" Height="450" Width="600"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Матричный шифр"
+                   HorizontalAlignment="Center"
+                   FontSize="18" FontWeight="Bold"
+                   Margin="0,0,0,16"/>
+
+        <StackPanel Grid.Row="1" Margin="0,0,0,12">
+            <Label Content="Исходный текст:"/>
+            <TextBox x:Name="InputTextBox"
+                     Height="80"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto"
+                     ToolTip="Введите текст для шифрования или дешифрования"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" 
+                    Margin="0,0,0,12"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+
+            <StackPanel Margin="0,0,10,0">
+                <Label Content="Количество строк (rows):"/>
+                <TextBox x:Name="RowsTextBox"
+                         ToolTip="Введите целое положительное число — количество строк матрицы"/>
+            </StackPanel>
+
+            <StackPanel Margin="10,0,0,0">
+                <Label Content="Количество столбцов (cols):"/>
+                <TextBox x:Name="ColsTextBox"
+                         ToolTip="Введите целое положительное число — количество столбцов матрицы"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3"
+                    Margin="0,0,0,12"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button x:Name="EncryptButton"
+                    Width="100"
+                    Content="Зашифровать"
+                    Margin="0,0,10,0"
+                    Click="EncryptButton_Click"
+                    ToolTip="Зашифровать введённый текст матричным методом"/>
+            <Button x:Name="DecryptButton"
+                    Width="100"
+                    Content="Расшифровать"
+                    Margin="0,0,10,0"
+                    Click="DecryptButton_Click"
+                    ToolTip="Расшифровать введённый текст матричным методом"/>
+            <Button x:Name="ClearButton"
+                    Width="100"
+                    Content="Очистить"
+                    Background="#888888"
+                    Click="ClearButton_Click"
+                    ToolTip="Очистить все поля"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4">
+            <Label Content="Результат:" />
+            <TextBox x:Name="ResultTextBox"
+                     IsReadOnly="True"
+                     Background="#F5F5F5"
+                     Foreground="#222222"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto"
+                     MinHeight="80"
+                     ToolTip="Результат шифрования или дешифрования (только для чтения)"/>
+        </StackPanel>
+
+        <TextBlock x:Name="ErrorTextBlock"
+                   Grid.Row="5"
+                   Foreground="#C0392B"
+                   FontSize="12"
+                   TextWrapping="Wrap"
+                   Margin="0,8,0,0"
+                   Visibility="Collapsed"/>
     </Grid>
 </Window>

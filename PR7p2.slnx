@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="PR7p2/PR7p2.csproj" />
-  <Project Path="UnitTestProject/UnitTestProject.csproj" />
+  <Project Path="PR7p2/PR7p2.csproj" Id="f330c2d2-416d-4791-9345-043bcf51451b" />
+  <Project Path="UnitTestProject/UnitTestProject.csproj" Id="9f2e0628-4124-4332-86bc-946562b25299" />
 </Solution>
